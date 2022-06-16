@@ -18,7 +18,7 @@
 
 ## 1. JavaScript Object Oriented
 
-- What is OOP?
+- **What is OOP?**
 
 To answer the last questions, before we need speak about Paradigms.
 
@@ -37,6 +37,66 @@ We need to learn in which work context favors applying one paradigm or another.
   - Reuse code
 
 ## 2. Objects, Classes and Prototypes
+
+- **What is a Object in JS?**
+
+> Literal objects !== Instances of classes
+
+|      Item       |         Literal object         |   object (oop)   |             object              |
+| :-------------: | :----------------------------: | :--------------: | :-----------------------------: |
+|  \_\_proto\_\_  |               ✅               |        ✅        |               ✅                |
+| What origin is? | Prototype JS Object´s Instance | Class´s Instance | Prototype Own Object´s Instance |
+
+- **What Prototype is?**
+
+A Prototype is a data structure from which objects are created, since it stores the attributes and methods that can later be inherited by their instances.
+
+- Literal Objects VS Prototype
+
+  - Literal object
+
+    ```js
+    // Way to create a literal Object
+    const natalia = {
+      // attributes
+      name: "natalia",
+      lastName: "rojas",
+      approvedCourses: ["Course Html", "Course CSS", "Course JS"],
+
+      // methods
+      // way1: approvedNewCourse: ()=>{}
+      // way2: approvedNewCourse(){}
+      approvedNewCourse(newCourse) {
+        this.approvedCourses.push(newCourse);
+      },
+    };
+    ```
+
+  - Prototype
+
+  ```js
+  // Way to create a Prototype
+  function Student(name, lastName, approvedCourses) {
+    // attributes
+    this.name = name;
+    this.lastName = lastName;
+    this.approvedCourses = approvedCourses;
+    // Methods
+    // way 1:
+    // this.approvedNewCourse = function(newCourse){
+    //  this.approvedCourses.push(newCourse);
+  }
+
+  //way 2:
+  Student.prototype.approvedNewCourse = function (newCourse) {
+    this.approvedCourses.push(newCourse);
+  };
+  ```
+
+| Create methods |      Literal object       |                                              Prototype                                              |
+| :------------: | :-----------------------: | :-------------------------------------------------------------------------------------------------: |
+|    Way one     | approvedNewCourse: ()=>{} |        this.approvedNewCourse = function(newCourse){this.approvedCourses.pus (newCourse); };        |
+|    Way two     |   approvedNewCourse(){}   | Student.prototype.approvedNewCourse = function(newCourse){ this.approvedCourses.push(newCourse); }; |
 
 ## 3. OOP Pilar
 
