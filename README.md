@@ -98,6 +98,9 @@ A Prototype is a data structure from which objects are created, since it stores 
 |    Way one     | approvedNewCourse: ()=>{} |        this.approvedNewCourse = function(newCourse){this.approvedCourses.pus (newCourse); };        |
 |    Way two     |   approvedNewCourse(){}   | Student.prototype.approvedNewCourse = function(newCourse){ this.approvedCourses.push(newCourse); }; |
 
+- **What are Classes in JS**
+  Classes are only syntactical sugar for constructor functions. Everything still works the same way!
+
 ## 3. OOP Pilar
 
 ### 3.1 Abstraction
