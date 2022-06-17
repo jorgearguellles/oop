@@ -45,3 +45,20 @@ Student.prototype.approvedNewCourse = function(newCourse){
 
 let jorge = new Student('jorge','arias', ['JS Course', 'Figma Course']);
 
+// Prototype with classes syntax
+
+class Student2 {
+  constructor({name = 'No name yet', lastName = 'No last name yet', approvedCourses = [], email = 'No email yet'}){
+    this.name = name
+    this.lastName = lastName
+    this.approvedCourses = approvedCourses
+    this.email = email
+  };
+
+  approvedNewCourse(newCourse){
+    this.approvedCourses.push(newCourse);
+  };
+};
+
+const miguelito = new Student2({name: 'Miguelito', lastName: 'Perez', approvedCourses: ['JS Course', 'HTML Course']})
+const milton = new Student2({name: 'Miguelito', lastName: 'Perez', email: 'milton@email.com'})
