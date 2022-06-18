@@ -1,53 +1,43 @@
-console.log('Connected');
+class Class {
+  constructor({name}){
+    this.name = name
+  }
+}
 
-// Way to create a literal Object
-const natalia = {
-  // attributes
-  name: 'natalia',
-  lastName: 'rojas',
-  approvedCourses: [
-    'Course Html',
-    'Course CSS',
-    'Course JS',
-  ],
+class Course {
+  constructor({name, classes = []}){
+    this.name = name
+    this.classes = classes
+  }
+}
 
-  // methods
-  // way1: approvedNewCourse: ()=>{}
-  // way2: approvedNewCourse(){}
-  approvedNewCourse(newCourse){
-    this.approvedCourses.push(newCourse);
+const basicProgramming = new Course({
+  name: 'Basic Programming course'
+})
+const definitiveProgrammingCourse = new Course({
+  name: 'Definitive Programming course'
+})
+const advanceProgrammingCourse = new Course({
+  name: 'Advance Programming course'
+})
+
+class LearningPaths {
+  constructor({name, courses = []}){
+    this.name = name
+    this.courses = courses
   }
 };
 
-// Way to create a Prototype
-function Student(name, lastName, approvedCourses){
-  // attributes
-  this.name = name;
-  this.lastName = lastName;
-  this.approvedCourses = approvedCourses;
-  // Methods
-  // way 1:
-  // this.approvedNewCourse = function(newCourse){
-  //  this.approvedCourses.push(newCourse);
-  // };
+const videoGameSchool = new LearningPaths({ 
+  name: 'Video Game School', 
+  courses: [
+    basicProgramming,
+    definitiveProgrammingCourse,
+    advanceProgrammingCourse
+  ]
+})
 
-}
-
-//way 2:
-Student.prototype.approvedNewCourse = function(newCourse){
-  this.approvedCourses.push(newCourse);
-};
-
-// Student.prototype.removedACourse = function(course){
-//   let indexOf = course.indexOf(course)
-//   this.approvedCourses.filter(course);
-// };
-
-let jorge = new Student('jorge','arias', ['JS Course', 'Figma Course']);
-
-// Prototype with classes syntax
-
-class Student2 {
+class Student {
   constructor({name = 'No name yet', lastName = 'No last name yet', approvedCourses = [], email = 'No email yet'}){
     this.name = name
     this.lastName = lastName
@@ -59,6 +49,3 @@ class Student2 {
     this.approvedCourses.push(newCourse);
   };
 };
-
-const miguelito = new Student2({name: 'Miguelito', lastName: 'Perez', approvedCourses: ['JS Course', 'HTML Course']})
-const milton = new Student2({name: 'Miguelito', lastName: 'Perez', email: 'milton@email.com'})
