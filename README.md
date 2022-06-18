@@ -110,8 +110,41 @@ Classes are only syntactical sugar for constructor functions. Everything still w
 
 ### 3.1 Abstraction
 
+Abstraction is the action of abstracting data from a real object to create its prototype/class in a programming language.
+
 ### 3.2 Encapsulation
+
+Encapsulation is protecting, saving, or limiting access to certain attributes and/or methods in our prototypes and objects.
+
+- What is Encapsulation in JS
+  - Make data inviolable
+  - An access modifier is assigned
+  - It's not about hiding it, but about protecting it
+- We have four keywords
+  - public: have access to all classes
+  - protected: Access to classes, package and subclasses
+  - default: Inner classes and package. Heritage don´t access it
+  - private: Just classes level, it will hidden for everyone
+- Applying encapsulation in JS
+  - Getters y setters
+  - Namespaces
+  - Object.defineProperties
+  - ES6 module
+
+#### 3.2.1 Getters and Setters
+
+#### 3.2.2 ES6 Modules
 
 ### 3.3 Inheritance
 
 ### 3.4 Polymorphism
+
+We have three polymorphism types:
+
+1. Overload
+2. Parametric
+3. Inclusion
+
+In JS we only can use Inclusion Polymorphism.
+
+This allows us to override the method of the super class to adapt it to the need of the class.

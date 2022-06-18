@@ -1,53 +1,86 @@
-console.log('Connected');
+function videoPlay(id){
+  const urlSecret = 'www.t.url-secret/' + id;
+  console.log('Is Playing the video by '+ urlSecret)
+}
+function videoStop(id){
+  const urlSecret = 'www.t.url-secret/' + id;
+  console.log('Stop video from '+ urlSecret)
+}
 
-// Way to create a literal Object
-const natalia = {
-  // attributes
-  name: 'natalia',
-  lastName: 'rojas',
-  approvedCourses: [
-    'Course Html',
-    'Course CSS',
-    'Course JS',
-  ],
+class PlatziClass {
+  constructor({name, videoID}){
+    this.name = name
+    this.videoID = videoID
+  };
 
-  // methods
-  // way1: approvedNewCourse: ()=>{}
-  // way2: approvedNewCourse(){}
-  approvedNewCourse(newCourse){
-    this.approvedCourses.push(newCourse);
+  play(){
+
+  };
+
+  pause(){
+
+  };
+
+};
+
+
+
+class Course {
+  constructor({name, classes = []}){
+    /* 
+    this._name communicate don't call directly
+    this attribute outside of the class
+    So, we have to create a function to call this attribute
+    and this is the security way to get this attribute
+    */ 
+    this._name = name
+    this.classes = classes
+  };
+
+  get name(){
+    return this._name;
+  }
+
+  set name(newName){
+    if ( newName === 'Bad course'){
+      console.error( newName + ' is not a valid name, please try a new name')
+    } else {
+      this._name = newName;
+    }
+  }
+
+};
+
+
+
+
+const basicProgramming = new Course({
+  name: 'Basic Programming course'
+})
+const definitiveProgrammingCourse = new Course({
+  name: 'Definitive Programming course'
+})
+const advanceProgrammingCourse = new Course({
+  name: 'Advance Programming course'
+})
+
+class LearningPaths {
+  constructor({name, courses = []}){
+    this.name = name
+    this.courses = courses
   }
 };
 
-// Way to create a Prototype
-function Student(name, lastName, approvedCourses){
-  // attributes
-  this.name = name;
-  this.lastName = lastName;
-  this.approvedCourses = approvedCourses;
-  // Methods
-  // way 1:
-  // this.approvedNewCourse = function(newCourse){
-  //  this.approvedCourses.push(newCourse);
-  // };
+const videoGameSchool = new LearningPaths({ 
+  name: 'Video Game School', 
+  courses: [
+    basicProgramming,
+    definitiveProgrammingCourse,
+    advanceProgrammingCourse
+  ]
+})
 
-}
-
-//way 2:
-Student.prototype.approvedNewCourse = function(newCourse){
-  this.approvedCourses.push(newCourse);
-};
-
-// Student.prototype.removedACourse = function(course){
-//   let indexOf = course.indexOf(course)
-//   this.approvedCourses.filter(course);
-// };
-
-let jorge = new Student('jorge','arias', ['JS Course', 'Figma Course']);
-
-// Prototype with classes syntax
-
-class Student2 {
+class Student {
   constructor({name = 'No name yet', lastName = 'No last name yet', approvedCourses = [], email = 'No email yet'}){
     this.name = name
     this.lastName = lastName
@@ -59,6 +92,3 @@ class Student2 {
     this.approvedCourses.push(newCourse);
   };
 };
-
-const miguelito = new Student2({name: 'Miguelito', lastName: 'Perez', approvedCourses: ['JS Course', 'HTML Course']})
-const milton = new Student2({name: 'Miguelito', lastName: 'Perez', email: 'milton@email.com'})
