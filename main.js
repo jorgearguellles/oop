@@ -1,8 +1,29 @@
-class Class {
-  constructor({name}){
-    this.name = name
-  }
+function videoPlay(id){
+  const urlSecret = 'www.t.url-secret/' + id;
+  console.log('Is Playing the video by '+ urlSecret)
 }
+function videoStop(id){
+  const urlSecret = 'www.t.url-secret/' + id;
+  console.log('Stop video from '+ urlSecret)
+}
+
+class PlatziClass {
+  constructor({name, videoID}){
+    this.name = name
+    this.videoID = videoID
+  };
+
+  play(){
+
+  };
+
+  pause(){
+
+  };
+
+};
+
+
 
 class Course {
   constructor({name, classes = []}){

@@ -138,3 +138,13 @@ Encapsulation is protecting, saving, or limiting access to certain attributes an
 ### 3.3 Inheritance
 
 ### 3.4 Polymorphism
+
+We have three polymorphism types:
+
+1. Overload
+2. Parametric
+3. Inclusion
+
+In JS we only can use Inclusion Polymorphism.
+
+This allows us to override the method of the super class to adapt it to the need of the class.
