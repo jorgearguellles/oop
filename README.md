@@ -131,6 +131,10 @@ Encapsulation is protecting, saving, or limiting access to certain attributes an
   - Object.defineProperties
   - ES6 module
 
+#### 3.2.1 Getters and Setters
+
+#### 3.2.2 ES6 Modules
+
 ### 3.3 Inheritance
 
 ### 3.4 Polymorphism
