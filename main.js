@@ -6,10 +6,32 @@ class Class {
 
 class Course {
   constructor({name, classes = []}){
-    this.name = name
+    /* 
+    this._name communicate don't call directly
+    this attribute outside of the class
+    So, we have to create a function to call this attribute
+    and this is the security way to get this attribute
+    */ 
+    this._name = name
     this.classes = classes
+  };
+
+  get name(){
+    return this._name;
   }
-}
+
+  set name(newName){
+    if ( newName === 'Bad course'){
+      console.error( newName + ' is not a valid name, please try a new name')
+    } else {
+      this._name = newName;
+    }
+  }
+
+};
+
+
+
 
 const basicProgramming = new Course({
   name: 'Basic Programming course'
